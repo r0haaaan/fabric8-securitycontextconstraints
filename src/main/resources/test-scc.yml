@@ -1,0 +1,13 @@
+kind: SecurityContextConstraints
+apiVersion: v1
+metadata:
+  name: scc-test
+runAsUser:
+  type: MustRunAsRange
+seLinuxContext:
+  type: MustRunAs
+fsGroup:
+  type: MustRunAs
+  ranges:
+    - max: 6000
+      min: 1000
